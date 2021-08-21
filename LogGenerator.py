@@ -11,7 +11,7 @@ import csv
 import time
 import sys
 
-sourceData = "FBPosts.csv"
+sourceData = "FBPosts.txt"
 placeholder = "LastLine.txt"
 
 def GetLineCount():
