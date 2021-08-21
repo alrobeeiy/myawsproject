@@ -15,7 +15,7 @@ sourceData = "FBPosts1.csv"
 placeholder = "LastLine.txt"
 
 def GetLineCount():
-    with open(sourceData, encoding='UTF-8') as f:
+    with open(sourceData, encoding='latin-1') as f:
         for i, l in enumerate(f):
             pass
     return i
