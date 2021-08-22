@@ -11,20 +11,20 @@ import csv
 import time
 import sys
 
-sourceData = "FBPosts3.csv"
+sourceData = "FBData.csv"
 placeholder = "LastLine.txt"
 
 def GetLineCount():
-    with open(sourceData, encoding='latin-1') as f:
+    with open(sourceData, newline='', encoding='utf-8') as f:
         for i, l in enumerate(f):
             pass
     return i
 
 def MakeLog(startLine, numLines):
     destData = time.strftime("/var/log/myfile/%Y%m%d-%H%M%S.log")
-    with open(sourceData, 'r' , encoding='latin-1') as csvfile:
+    with open(sourceData, 'r' , newline='', encoding='utf-8') as csvfile:
         with open(destData, 'w') as dstfile:
-            reader = csv.reader(csvfile)
+            reader = csv.reader(csvfile , delimiter=' ', quotechar='|')
             writer = csv.writer(dstfile)
             next (reader) #skip header
             inputRow = 0
